@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./output.css" rel="stylesheet" />
+
+        <title>navbar</title>
+        <script async>
+            function toggleDropdown(element) {
+                var dropdownContent = element.querySelector(".dropdown-content");
+                // dropdownContent.classList.toggle("hidden");
+                dropdownContent.style.display = dropdownContent.style.display === "none" ? "block" : "none";
+            }
+        </script>
+    </head>
+    <body class="bg-gray-900 text-amber-200">
+        <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
+            <h1 class="font-mono my-auto">
+                <div class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold inline">cool</div>
+                nav
+            </h1>
+            <a href="./index.html" class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2">&lt; home </a>
+        </header>
+
+        <main>
+            <div class="place-items-center h-[50vh] grid sm:hidden">
+                <div class="hamburger grid gap-1 cursor-pointer">
+                    <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
+                    <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
+                    <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
+                </div>
+            </div>
+            <div class="place-items-center h-[50vh] hidden sm:grid">
+                <div class="rec bg-gray-950 rounded-[20px] w-[95vw] lg:w-[60vw] h-[10vh] grid grid-flow-col relative">
+                    <span>title 1 </span>
+                    <span>title 2</span>
+                    <span>title 3</span>
+                    <span class="relative" onclick="toggleDropdown(this)">
+                        <p>dropdown &downarrow;</p>
+                        <div class="dropdown rounded-lg grid grid-flow-col absolute top-0 mt-12">
+                            <div class="dropdown-content bg-gray-950 rounded-b-3xl p-2 transition-all duration-900">
+                                <span>dropdown 1</span>
+                                <span>dropdown 2</span>
+                                <span>dropdown 3</span>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </main>
+        <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
+            <p class="italic inline">&copy; All right's <div class="line-through inline">reserved</div> unreserverd</p>
+        </footer>
+    </body>
+    <style>
+        span {
+            margin: 0.5rem;
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            padding: 4px 32px;
+        }
+        span:hover {
+            transition: all 0.5s;
+            background: #333;
+            color: rgb(255, 226, 95);
+        }
+    </style>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./output.css" rel="stylesheet" />
+    </head>
+    <body class="bg-gray-900 text-amber-200 w-[100vw] h-[100vh] relative overflow-hidden">
+        <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center">
+            <h1 class="font-mono my-auto">
+                chidam's
+                <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 line-through text-black font-extrabold"
+                    >lame</span
+                >
+                component library
+            </h1>
+        </header>
+
+        <div class="overflow-auto h-full">
+            <nav>
+                <div class="grid grid-part m-4 gap-4 sm:mx-10 lg:mx-64 sm:my-20">
+                    <a href="index.html">Static Webpage Layout (this page itself)</a>
+                    <a href="card.html">CSS Card Component with Hover Effects</a>
+                    <a href="index.html">Responsive Grid Layout (This page itself)</a>
+                    <a href="navbar.html">Pure CSS Dropdown Menu</a>
+                    <a href="page5.html">Page 5</a>
+                    <a href="page6.html">Page 6</a>
+                    <a href="page7.html">Page 7</a>
+                    <a href="page8.html">Page 8</a>
+                    <a href="page9.html">Page 9</a>
+                    <a href="page10.html">Page 10</a>
+                </div>
+            </nav>
+
+            <main class="pb-20 grid place-items-center">
+                <h2>click to navigate</h2>
+            </main>
+        </div>
+        <footer class="absolute bottom-0 w-full text-center py-2 bg-black opacity-60">
+            <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
+        </footer>
+    </body>
+    <style>
+        .grid-part {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        a {
+            background: #333;
+            display: grid;
+            place-items: center;
+            height: fit-content;
+            padding: 0.5rem;
+            border-radius: 20px;
+            border: 2px rgb(255, 237, 155) solid;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</html>
