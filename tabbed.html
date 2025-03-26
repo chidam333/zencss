@@ -6,6 +6,26 @@
         <link href="./output.css" rel="stylesheet" />
 
         <title>tab check</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                location.href = "#first-content";
+                const tabs = document.querySelectorAll('input[name="main_tab"]');
+                tabs.forEach((tab) => {
+                    tab.addEventListener("change", () => {
+                        if (tab.checked) {
+                            const wrapper = tab.nextElementSibling;
+                            // console.log({wrapper}, wrapper.classList.contains("wrapper"));
+                            if (wrapper && wrapper.classList.contains("wrapper")) {
+                                // console.log("wrapper found");
+                                document.querySelectorAll('.wrapper').forEach(w => w.classList.remove('border-b'));
+                                wrapper.classList.add('border-b');
+                            }
+                            // console.log(`Active tab: ${tab.id}`);
+                        }
+                    });
+                });
+            });
+        </script>
     </head>
     <body class="bg-gray-900 text-amber-200">
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
@@ -13,12 +33,62 @@
                 <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold">cool</span>
                 tab ui
             </h1>
-            <a href="./index.html" class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2">&lt; home </a>
+            <a
+                href="./index.html"
+                class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2"
+                >&lt; home
+            </a>
         </header>
+        <main>
+            <div class="tabs h-[70vh] grid place-items-center">
+                <div class="content w-[250px] md:w-[400px]">
+                    <div class="w-full grid grid-cols-3 gap-2 mb-6">
+                        <input class="hidden" type="radio" name="main_tab" id="first" checked />
+                        <div class="wrapper border-b">
+                            <label
+                                class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
+                                for="first"
+                                onclick="location.href='#first-content'"
+                                >first</label
+                            >
+                        </div>
+                        <input class="hidden" type="radio" name="main_tab" id="second" />
+                        <div class="wrapper">
+                            <label
+                                onclick="location.href = '#second-content'"
+                                class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
+                                for="second"
+                                >second
+                            </label>
+                        </div>
+                        <input class="hidden" type="radio" name="main_tab" id="third" />
+                        <div class="wrapper">
+                            <label
+                                onclick="location.href = '#third-content'"
+                                class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
+                                for="third"
+                                >third</label
+                            >
+                        </div>
+                    </div>
+                    <div class="first-content w-full text-center hidden target:block" id="first-content">
+                        this is <span class="bg-yellow-200 px-2 text-black italic">first</span> content. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Quisquam, voluptates
+                    </div>
+                    <div class="second-content w-full text-center hidden target:block" id="second-content">
+                        this is <span class="bg-yellow-200 px-2 text-black italic">second</span> content. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Quisquam, voluptates
+                    </div>
+                    <div class="third-content w-full text-center hidden target:block" id="third-content">
+                        this is <span class="bg-yellow-200 px-2 text-black italic">third</span> content. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Quisquam, voluptates
+                    </div>
+                </div>
+            </div>
+        </main>
         <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
             <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
         </footer>
     </body>
-    <style>
-    </style>
+    <style></style>
 </html>

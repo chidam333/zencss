@@ -4,8 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./output.css" rel="stylesheet" />
-
         <title>slider</title>
+        <script async>
+            function scrollLeft(ele){
+                console.log({ele},"hello")
+            }
+        </script>
     </head>
     <body class="bg-gray-900 text-amber-200">
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
@@ -13,12 +17,26 @@
                 <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold">cool</span>
                 slider
             </h1>
-            <a href="./index.html" class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2">&lt; home </a>
+            <a
+                href="./index.html"
+                class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2"
+                >&lt; home
+            </a>
         </header>
+        <main class="h-[80vh] grid place-items-center">
+            <div class="slider h-[400px] bg-black flex overflow-hidden relative" style="width: calc(400px * (16 / 9))">
+                <div class="lt absolute left-4 p-2 bg-[#333] h-fit cursor-pointer my-auto bottom-0 top-0" onclick="scrollLeft" onclick="console.log('hello')">&lt;</div>
+                <div class="gt absolute right-4 p-2 bg-[#333] h-fit cursor-pointer my-auto bottom-0 top-0">&gt;</div>
+                <div class="img-container h-full min-w-full flex justify-center items-center">
+                    <img class="max-h-full" src="static/kolkata.jpg" alt="" />
+                </div>
+                <div class="img-container h-full min-w-full"><img class="" src="static/kolkata2.jpg" alt="" /></div>
+                <div class="img-container h-full min-w-full"><img class="" src="static/kolkata3.jpg" alt="" /></div>
+            </div>
+        </main>
         <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
             <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
         </footer>
     </body>
-    <style>
-    </style>
+    <style></style>
 </html>
