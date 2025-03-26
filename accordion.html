@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="./output.css" rel="stylesheet" />
+        <title>accordion</title>
+        <script>
+            function toggle(e, i) {
+                const acc_content = document.querySelector(`.content${i} .accordion-content`);
+                const acc_btn = document.querySelector(`.content${i} .accordion-btn`);
+                const isCollapsed = acc_content.style.height === "0px" || acc_content.style.height === "";
+                if (isCollapsed) {
+                    acc_btn.classList.toggle("rotate-180");
+                    acc_content.style.height = `${acc_content.scrollHeight + 10}px`;
+                } else {
+                    acc_btn.classList.toggle("rotate-180");
+                    acc_content.style.height = "0px";
+                }
+            }
+        </script>
+        <style>
+            /* .accordion-content {
+                transition: height 0.3s ease;
+            } */
+        </style>
+    </head>
+    <body class="bg-gray-900 text-amber-200">
+        <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
+            <h1 class="font-mono my-auto">
+                <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold">cool</span>
+                accordion
+            </h1>
+            <a
+                href="./index.html"
+                class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-1 md:right-6 pr-2"
+                >&lt; home
+            </a>
+        </header>
+        <main>
+            <div class="grid place-items-center h-[80vh] overflow-auto">
+                <div class="accordion lg:w-[400px] w-[200px]  divide-y-2 divide-amber-200 border">
+                    <div class="content1">
+                        <button
+                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
+                            onclick="toggle(event,1)"
+                        >
+                            <div class="title">this is accordion 1</div>
+                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
+                        </button>
+                        <div
+                            class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
+                            Quisquam, voluptates quidem.
+                        </div>
+                    </div>
+                    <div class="content2">
+                        <button
+                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
+                            onclick="toggle(event,2)"
+                        >
+                            <div class="title">this is accordion 2</div>
+                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
+                        </button>
+                        <div class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
+                                Quisquam, voluptates quidem.
+                        </div>
+                    </div>
+                    <div class="content3">
+                        <button
+                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
+                            onclick="toggle(event,3)"
+                        >
+                            <div class="title">this is accordion 3</div>
+                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
+                        </button>
+                        <div class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
+                                Quisquam, voluptates quidem.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
+            <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
+        </footer>
+    </body>
+</html>
