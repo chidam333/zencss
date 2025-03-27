@@ -6,12 +6,6 @@
         <link href="./output.css" rel="stylesheet" />
 
         <title>navbar</title>
-        <script async>
-            function toggleDropdown(element) {
-                const dropdownContent = element.querySelector(".dropdown-content");
-                dropdownContent.style.visibility = dropdownContent.style.visibility === "hidden" ? "visible" : "hidden";
-            }
-        </script>
     </head>
     <body class="bg-gray-900 text-amber-200">
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
@@ -29,60 +23,62 @@
         <main>
             <div class="place-items-center h-[50vh] grid sm:hidden">
                 <div class="dark-fall relative">
+                    <input type="checkbox" name="hamb" id="hamb" class="peer hidden" />
                     <div
-                        class="dropdown-content w-[200px] h-fit visible divide-y divide-amber-200 border-2 border-amber-200"
+                        class="dropdown-content w-[200px] h-fit invisible peer-checked:visible divide-y divide-amber-200 border-2 border-amber-200"
                     >
                         <div class="p-2">home</div>
                         <div class="p-2">about</div>
                         <div class="p-2">contact</div>
                         <div class="p-2">services</div>
                     </div>
-                    <div
-                        class="hamburger grid gap-1 cursor-pointer h-[10px] absolute -right-10 top-0"
-                        onclick="toggleDropdown(document.querySelector('.dark-fall'))"
-                    >
+                    <label for="hamb" class="hamburger grid gap-1 cursor-pointer h-[10px] absolute -right-10 top-0">
                         <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
                         <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
                         <div class="line1 h-0.5 w-[10px] bg-amber-200"></div>
-                    </div>
+                    </label>
                 </div>
             </div>
-            <div class="place-items-center h-[50vh] hidden sm:grid">
-                <div class="rec bg-gray-950 rounded-[20px] w-[95vw] lg:w-[60vw] h-[10vh] grid grid-flow-col relative">
-                    <span>title 1 </span>
-                    <span>title 2</span>
-                    <span>title 3</span>
-                    <span class="relative" onclick="toggleDropdown(this)">
-                        <p>dropdown &downarrow;</p>
-                        <div class="dropdown rounded-lg grid grid-flow-col absolute top-0 mt-12">
-                            <div
-                                class="dropdown-content bg-[#333] rounded-b-3xl p-2 invisible"
-                            >
-                                <div class="background-[#333] px-6 py-2">content 1</div>
-                                <div class="background-[#333] px-6 py-2">content 2</div>
-                                <div class="background-[#333] px-6 py-2">content 3</div>
+            <div class="place-items-center h-[70vh] hidden sm:grid">
+                <div class="rec rounded-[20px] w-[95vw] lg:w-[40vw] grid grid-flow-col relative border rounded-lg">
+                    <span class="item">title 1 </span>
+                    <span class="item">title 2</span>
+                    <span class="item">title 3</span>
+                    <div class="see w-full h-full grid place-items-center group">
+                        <div class="item my-0.5" for="drop">
+                            <span>dropdown <span class="rotate-180 inline-block pb-0.5 text-lg">&triangle;</span></span>
+                        </div>
+                        <div
+                            class="dropdown hidden group-hover:block bg-gray-900 h-[200px] w-[200px] absolute top-14 border rounded-lg"
+                        >
+                            <div class="grid w-full h-full divide-y">
+                                <span class="grid place-items-center cursor-pointer"> title 1</span>
+                                <span class="grid place-items-center cursor-pointer"> title 2</span>
+                                <span class="grid place-items-center cursor-pointer"> title 3</span>
                             </div>
                         </div>
-                    </span>
+                    </div>
                 </div>
             </div>
         </main>
         <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
-            <p class="italic inline">
-                &copy; All right's <div class="line-through inline">reserved</div> unreserverd
-            </p>
+            <div class="italic inline">
+                &copy; All right's
+                <div class="line-through inline">reserved</div>
+                unreserverd
+            </div>
         </footer>
     </body>
     <style>
-        span {
+        .item {
             margin: 0.5rem;
-            border-radius: 20px;
+            border-radius: 5px;
             display: grid;
             place-items: center;
             cursor: pointer;
-            padding: 4px 32px;
+            padding: 4px 16px;
         }
-        span:hover {
+        .item:hover {
             transition: all 0.5s;
             background: #333;
             color: rgb(255, 226, 95);

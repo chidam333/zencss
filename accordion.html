@@ -5,25 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./output.css" rel="stylesheet" />
         <title>accordion</title>
-        <script>
-            function toggle(e, i) {
-                const acc_content = document.querySelector(`.content${i} .accordion-content`);
-                const acc_btn = document.querySelector(`.content${i} .accordion-btn`);
-                const isCollapsed = acc_content.style.height === "0px" || acc_content.style.height === "";
-                if (isCollapsed) {
-                    acc_btn.classList.toggle("rotate-180");
-                    acc_content.style.height = `${acc_content.scrollHeight + 10}px`;
-                } else {
-                    acc_btn.classList.toggle("rotate-180");
-                    acc_content.style.height = "0px";
-                }
-            }
-        </script>
-        <style>
-            /* .accordion-content {
-                transition: height 0.3s ease;
-            } */
-        </style>
     </head>
     <body class="bg-gray-900 text-amber-200">
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
@@ -39,46 +20,56 @@
         </header>
         <main>
             <div class="grid place-items-center h-[80vh] overflow-auto">
-                <div class="accordion lg:w-[400px] w-[200px]  divide-y-2 divide-amber-200 border">
-                    <div class="content1">
-                        <button
-                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
-                            onclick="toggle(event,1)"
-                        >
+                <div class="accordion lg:w-[400px] w-[200px] divide-y-2 divide-amber-200 border">
+                    <div class="content1 relative">
+                        <input type="checkbox" class="peer/content1 hidden" id="content1" />
+                        <label for="content1" class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333] gro">
                             <div class="title">this is accordion 1</div>
-                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
-                        </button>
+                        </label>
+                        <label
+                            for="content1"
+                            class="accordion-btn cursor-pointer peer-checked/content1:rotate-180 transition-[rotate] duration-500 absolute right-6 top-1.5"
+                            >&DownTeeArrow;</label
+                        >
                         <div
-                            class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center"
+                            class="accordion-content px-6 h-0 peer-checked/content1:h-full peer-checked/content1:pb-4 overflow-hidden text-center"
                         >
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
                             Quisquam, voluptates quidem.
                         </div>
                     </div>
-                    <div class="content2">
-                        <button
-                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
-                            onclick="toggle(event,2)"
-                        >
+                    <div class="content2 relative">
+                        <input type="checkbox" class="hidden peer/content2" id="content2" />
+                        <label for="content2" class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]">
                             <div class="title">this is accordion 2</div>
-                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
-                        </button>
-                        <div class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
-                                Quisquam, voluptates quidem.
+                        </label>
+                        <label
+                            for="content2"
+                            class="accordion-btn cursor-pointer peer-checked/content2:rotate-180 transition-[rotate] duration-500 absolute right-6 top-1.5"
+                            >&DownTeeArrow;</label
+                        >
+                        <div
+                            class="accordion-content px-6 h-0 peer-checked/content2:h-full peer-checked/content2:pb-4 overflow-hidden text-center"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
+                            Quisquam, voluptates quidem.
                         </div>
                     </div>
-                    <div class="content3">
-                        <button
-                            class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]"
-                            onclick="toggle(event,3)"
-                        >
+                    <div class="content3 relative">
+                        <input type="checkbox" class="hidden peer/content3" id="content3" />
+                        <label for="content3" class="w-full grid grid-flow-col p-2 cursor-pointer hover:bg-[#333]">
                             <div class="title">this is accordion 3</div>
-                            <div class="accordion-btn transition-[rotate] duration-500">&DownTeeArrow;</div>
-                        </button>
-                        <div class="accordion-content px-6 h-0 overflow-hidden transition-[height] duration-300 text-center">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
-                                Quisquam, voluptates quidem.
+                        </label>
+                        <label
+                            for="content3"
+                            class="accordion-btn cursor-pointer peer-checked/content3:rotate-180 transition-[rotate] duration-500 absolute right-6 top-1.5"
+                            >&DownTeeArrow;</label
+                        >
+                        <div
+                            class="accordion-content px-6 h-0 peer-checked/content3:h-full peer-checked/content3:pb-4 overflow-hidden text-center"
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates quidem.
+                            Quisquam, voluptates quidem.
                         </div>
                     </div>
                 </div>

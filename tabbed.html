@@ -6,26 +6,6 @@
         <link href="./output.css" rel="stylesheet" />
 
         <title>tab check</title>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                location.href = "#first-content";
-                const tabs = document.querySelectorAll('input[name="main_tab"]');
-                tabs.forEach((tab) => {
-                    tab.addEventListener("change", () => {
-                        if (tab.checked) {
-                            const wrapper = tab.nextElementSibling;
-                            // console.log({wrapper}, wrapper.classList.contains("wrapper"));
-                            if (wrapper && wrapper.classList.contains("wrapper")) {
-                                // console.log("wrapper found");
-                                document.querySelectorAll('.wrapper').forEach(w => w.classList.remove('border-b'));
-                                wrapper.classList.add('border-b');
-                            }
-                            // console.log(`Active tab: ${tab.id}`);
-                        }
-                    });
-                });
-            });
-        </script>
     </head>
     <body class="bg-gray-900 text-amber-200">
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
@@ -43,8 +23,8 @@
             <div class="tabs h-[70vh] grid place-items-center">
                 <div class="content w-[250px] md:w-[400px]">
                     <div class="w-full grid grid-cols-3 gap-2 mb-6">
-                        <input class="hidden" type="radio" name="main_tab" id="first" checked />
-                        <div class="wrapper border-b">
+                        <input class="hidden peer/f" type="radio" name="main_tab" id="first" checked />
+                        <div class="wrapper peer-checked/f:border-b">
                             <label
                                 class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
                                 for="first"
@@ -52,8 +32,8 @@
                                 >first</label
                             >
                         </div>
-                        <input class="hidden" type="radio" name="main_tab" id="second" />
-                        <div class="wrapper">
+                        <input class="hidden peer/s" type="radio" name="main_tab" id="second" />
+                        <div class="wrapper peer-checked/s:border-b">
                             <label
                                 onclick="location.href = '#second-content'"
                                 class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
@@ -61,8 +41,8 @@
                                 >second
                             </label>
                         </div>
-                        <input class="hidden" type="radio" name="main_tab" id="third" />
-                        <div class="wrapper">
+                        <input class="hidden peer/t" type="radio" name="main_tab" id="third" />
+                        <div class="wrapper peer-checked/t:border-b">
                             <label
                                 onclick="location.href = '#third-content'"
                                 class="py-2 hover:bg-[#333] rounded-md cursor-pointer my-2 grid place-items-center"
