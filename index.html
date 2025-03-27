@@ -9,26 +9,26 @@
         <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center">
             <h1 class="font-mono my-auto">
                 chidam's
-                <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 line-through text-black font-extrabold"
-                    >lame</span
+                <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold"
+                    >zen css</span
                 >
-                component library
+                components
             </h1>
         </header>
 
         <div class="overflow-auto h-full">
             <nav>
                 <div class="grid grid-part m-4 gap-4 sm:mx-10 lg:mx-64 sm:my-20">
-                    <a href="index.html">(this) static webpage layout</a>
-                    <a href="card.html">css card component with hover effects</a>
-                    <a href="index.html">(this) responsive grid layout</a>
-                    <a href="navbar.html">pure css dropdown menu</a>
-                    <a href="modal.html">modal popup using the :target or Checkbox Hack</a>
-                    <a href="tabbed.html">tabbed content interface</a>
-                    <a href="slider.html">pure css slider</a>
-                    <a href="accordion.html">css accordion component</a>
-                    <a href="complex.html">complex responsive layout with grid</a>
-                    <a href="simulate.html">Interactive Multi-Page Website Simulator with CSS Only</a>
+                    <a class="atag" href="index.html">(this) static webpage layout</a>
+                    <a class="atag" href="card.html">css card component with hover effects</a>
+                    <a class="atag" href="index.html">(this) responsive grid layout</a>
+                    <a class="atag" href="navbar.html">pure css dropdown menu</a>
+                    <a class="atag" href="modal.html">modal popup using the :target or Checkbox Hack</a>
+                    <a class="atag" href="tabbed.html">tabbed content interface</a>
+                    <a class="atag" href="slider.html">pure css slider</a>
+                    <a class="atag" href="accordion.html">css accordion component</a>
+                    <div class="atag opacity-50 cursor-not-allowed" href="complex.html">complex responsive layout with grid</div>
+                    <div class="atag opacity-50 cursor-not-allowed" href="simulate.html">Interactive Multi-Page Website Simulator with CSS Only</div>
                 </div>
             </nav>
 
@@ -44,7 +44,7 @@
         .grid-part {
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
-        a {
+        .atag {
             background: #333;
             display: grid;
             place-items: center;
