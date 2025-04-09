@@ -13,12 +13,58 @@
                 <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold">zen</span>
                 accordion
             </h1>
-            <a href="./index.html" class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2">&lt; home </a>
+            <a
+                href="./index.html"
+                class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2"
+                >&lt; home
+            </a>
         </header>
+        <main>
+            <nav class="grid place-items-center gap-4 my-4">
+                <div class="contain">
+                    <a href="#home" class="px-4 py-2 rounded hover:border-b">Home</a>
+                    <a href="#about" class="px-4 py-2 rounded hover:border-b">About</a>
+                    <a href="#contact" class="px-4 py-2 rounded hover:border-b">Contact</a>
+                </div>
+            </nav>
+
+            <div class="relative h-[70vh] w-screen">
+                <section
+                    id="home"
+                    class="absolute inset-0 grid w-[60vw] rounded-md mx-auto place-items-center bg-gray-800 text-white transition-opacity duration-1000 opacity-0 target:opacity-100"
+                >
+                    <div class="text-center">
+                        <h2 class="text-4xl mb-4">This is Home page</h2>
+                        <p>it's a home page nothing much to add</p>
+                    </div>
+                </section>
+                <section
+                    id="about"
+                    class="absolute inset-0 grid w-[60vw] rounded-md mx-auto place-items-center bg-gray-800 text-white transition-opacity duration-1000 opacity-0 target:opacity-100"
+                >
+                    <div class="text-center">
+                        <h2 class="text-4xl mb-4">This is About page</h2>
+                        <p>A page to get to know about</p>
+                    </div>
+                </section>
+                <section
+                    id="contact"
+                    class="absolute inset-0 grid w-[60vw] rounded-md mx-auto place-items-center bg-gray-800 text-white transition-opacity duration-1000 opacity-0 target:opacity-100"
+                >
+                    <div class="text-center">
+                        <h2 class="text-4xl mb-4">This is Contact page</h2>
+                        lol i don't think you want to contact me, but if you do, you can find me @chidam333
+                    </div>
+                </section>
+            </div>
+        </main>
         <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
             <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
         </footer>
     </body>
     <style>
+        html:not(:target) #home{
+            opacity: 1;
+        }
     </style>
 </html>
