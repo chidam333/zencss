@@ -5,20 +5,99 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="./output.css" rel="stylesheet" />
 
-        <title>accordion</title>
+        <title>complex grid</title>
     </head>
-    <body class="bg-gray-900 text-amber-200">
-        <header class="w-[100vw] text-center text-xl md:text-4xl h-[10vh] grid place-items-center relative">
-            <h1 class="font-mono my-auto">
-                <span class="lame bg-yellow-200 px-2 italic stroke-indigo-50 text-black font-extrabold">zen</span>
-                accordion
-            </h1>
-            <a href="./index.html" class="p-0.5 bg-blue-500 absolute text-xl md:text-2xl text-white font-extrabold rounded-md right-6 pr-2">&lt; home </a>
+    <body>
+        <header class="sticky top-0 z-50 h-[10vh] grid place-items-center backdrop-blur-md bg-white/30">
+            <h1 class="font-mono my-auto">complex grid</h1>
+            <a
+                href="./index.html"
+                class="p-0.5 absolute text-md md:text-md text-blue-700 font-extrabold rounded-md right-6 pr-2"
+                >&lt; home
+            </a>
         </header>
-        <footer class="absolute bottom-0 w-full text-center py-2 bg-black">
+        <main class="h-full">
+            <div id="imggrid" class="grid grid-cols-3 gap-4 p-4">
+                <img src="./static/kolkata.jpg" alt="Image 1" class="w-full h-auto img1" />
+                <img src="./static/kolkata2.jpg" alt="Image 2" class="w-full h-auto img2" />
+                <img src="./static/kolkata3.jpg" alt="Image 3" class="w-full h-auto img3" />
+                <img src="./static/kolkata4.jpeg" alt="Image 4" class="w-full h-auto img4" />
+                <img loading="lazy" src="./static/kolkata5.jpg" alt="Image 5" class="w-full h-auto img5" />
+                <img loading="lazy" src="./static/kolkata6.jpg" alt="Image 6" class="w-full h-auto img6" />
+                <img loading="lazy" src="./static/kolkata7.jpg" alt="Image 7" class="w-full h-auto img7" />
+                <img loading="lazy" src="./static/kolkata8.jpg" alt="Image 8" class="w-full h-auto img8" />
+            </div>
+        </main>
+        <footer class="sticky bottom-0 w-full text-center py-2 bg-black/80 backdrop-blur-md text-amber-300">
             <p class="italic">&copy; All right's <span class="line-through">reserved</span> unreserverd</p>
         </footer>
     </body>
     <style>
+        #imggrid {
+            display: grid;
+            gap: 10px;
+            grid-template-areas:
+                "img1 img2 img3"
+                "img1 img5 img6"
+                "img7 img8 img6"
+                ". img8 img4";
+            place-items: center;
+        }
+        img {
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .img1 {
+            grid-area: img1;
+        }
+        .img2 {
+            grid-area: img2;
+        }
+        .img3 {
+            grid-area: img3;
+        }
+        .img4 {
+            grid-area: img4;
+        }
+        .img5 {
+            grid-area: img5;
+        }
+        .img6 {
+            grid-area: img6;
+        }
+        .img7 {
+            grid-area: img7;
+        }
+        .img8 {
+            grid-area: img8;
+        }
+
+        @media (max-width: 700px) {
+            #imggrid {
+                display: grid;
+                grid-template-areas:
+                    "img1 img2"
+                    "img1 img3"
+                    "img4 img5"
+                    "img6 img7"
+                    "img6 img8"
+                    ". img8";
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            #imggrid {
+                grid-template-areas:
+                    "img1"
+                    "img2"
+                    "img3"
+                    "img4"
+                    "img5"
+                    "img6"
+                    "img7"
+                    "img8";
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </html>
